@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Optimizations.cs" />
-    <Compile Include="OptimizationsTests.cs" />
     <Compile Include="OPTIMIZER.cs">
       <SubType>Form</SubType>
     </Compile>

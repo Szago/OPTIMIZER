@@ -314,7 +314,7 @@ namespace Optimizer
         }
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            // Update UI or perform post-processing tasks here
+            // aktualizajce UI
         }
         private void button2_Click(object sender, EventArgs e)
         {
