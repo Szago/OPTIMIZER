@@ -28,7 +28,7 @@ namespace Optimizer
             process.WaitForExit();
         }
 
-        public static void OptimizeGameDVR()
+        public static void OptimizeRegistry()
         {
             using (var key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR"))
             {

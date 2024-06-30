@@ -59,5 +59,15 @@ namespace Optimizer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap geometric_art_7441984_1280 {
+            get {
+                object obj = ResourceManager.GetObject("geometric_art_7441984_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

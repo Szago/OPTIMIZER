@@ -65,7 +65,7 @@ namespace Optimizer
                 progressBar1.Maximum += value;
             }
         }
-        private void UpdateProgressBar(int value)
+        public void UpdateProgressBar(int value)
         {
             if (progressBar1.InvokeRequired)
             {
@@ -96,7 +96,7 @@ namespace Optimizer
             UpdateProgressBar(1);
             
             if (checkBox1.Checked)
-                UpdateProgressBarMax(4);
+                UpdateProgressBarMax(2);
             if (checkBox2.Checked)
                 UpdateProgressBarMax(2);
             if (checkBox3.Checked)
@@ -122,8 +122,9 @@ namespace Optimizer
             {
                 try
                 {
+                    UpdateProgressBar(1);
                     Optimizations.CreateBackup(_selectedPath);
-                    UpdateProgressBar(4);
+                    UpdateProgressBar(1);
                 }
                 catch
                 {
@@ -136,7 +137,7 @@ namespace Optimizer
                 try
                 {
                     UpdateProgressBar(1);
-                    Optimizations.OptimizeGameDVR();
+                    Optimizations.OptimizeRegistry();
                     UpdateProgressBar(1);
                 }
                 catch
@@ -308,10 +309,7 @@ namespace Optimizer
         }
         private void UpdateButtonStatus()
         {
-            // Check if any of the checkboxes are checked
             bool anyChecked = checkBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked;
-
-            // Enable or disable the button based on whether any checkboxes are checked
             button1.Enabled = anyChecked;
         }
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -366,6 +364,14 @@ namespace Optimizer
         {
             UpdateButtonStatus();
         }
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStatus();
+        }
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStatus();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             checkBox1.Checked = true;
@@ -395,14 +401,6 @@ namespace Optimizer
 
         }
 
-        private void checkBox10_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateButtonStatus();
-        }
-
-        private void checkBox11_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateButtonStatus();
-        }
+        
     }
 }
